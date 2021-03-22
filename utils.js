@@ -1,9 +1,5 @@
 const getName = ({ name }) => {return name;};
 
-const copyAndPush = (arr, newInt) => {
-  const newArray =  [...arr];
-  newArray.push(newInt);
-  return newArray;
-};	
+const copyAndPush = (arr, newInt) => ([...arr, newInt]);	
 
 module.exports = { getName, copyAndPush };
