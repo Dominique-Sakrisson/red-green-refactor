@@ -1,4 +1,5 @@
-const { getName, copyAndPush, capitalizeAndFilter } = require('./utils.js');
+// const { default: fetch } = require('node-fetch');
+const { getName, copyAndPush, capitalizeAndFilter, fetchQuotes } = require('./utils.js');
 
 test('returns the name property of the object passed as a parameter', () => {
   const spot = { name: 'spot', age: 5, weight: '20 lbs' };
@@ -17,6 +18,17 @@ test('returns a new array that is a copy of the array passed in with a new item 
 });
 
 test('return an array of strings all capitolized, sans strings beginning with \'f\'  ', () => {
-	const strArray = ['a', 'aa', 'f', 'ff', 'g', 'gg', 'zZf'];
-	expect(capitalizeAndFilter(strArray)).toEqual(['A', 'AA', 'G', 'GG', 'ZZF']);
+  const strArray = ['a', 'aa', 'f', 'ff', 'g', 'gg', 'zZf'];
+  expect(capitalizeAndFilter(strArray)).toEqual(['A', 'AA', 'G', 'GG', 'ZZF']);
+});
+
+test('returns a single quote object from futurama api with properties name: text: and image:', async() => {
+  const quotes = await fetchQuotes();
+
+
+  expect(quotes).toEqual({
+    name: 'Fry', 
+    text: 'The underprivileged get all the breaks.', 
+    image: 'https://res.cloudinary.com/dzxqhkyqd/image/upload/v1554904133/fry.png'});
+
 });
