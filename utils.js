@@ -13,8 +13,7 @@ const fetchQuotes = async() => {
   try {
     const res = await fetch('https://futuramaapi.herokuapp.com/api/characters/Fry/1');
     const body = await res.json();
-    // const result = body.map(item => { return { name: item.character, text: item.quote, image: item.image };});
-    return body.map(item => ({ name: item.character, text: item.quote, image: item.image }));
+    return body.map(({ character, quote, image }) => ({ name: character, text: quote, image }));
   } 
   catch(error) {
     //had this in there for default data incase of api being down 
