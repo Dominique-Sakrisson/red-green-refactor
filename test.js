@@ -1,4 +1,4 @@
-const { getName, copyAndPush } = require('./utils.js');
+const { getName, copyAndPush, capitalizeAndFilter } = require('./utils.js');
 
 test('returns the name property of the object passed as a parameter', () => {
   const spot = { name: 'spot', age: 5, weight: '20 lbs' };
@@ -14,4 +14,9 @@ test('returns a new array that is a copy of the array passed in with a new item 
   expect(copyAndPush(numbers, 5)).toEqual([1, 2, 3, 5]);
 
   expect(numbers).toEqual([1, 2, 3]);
+});
+
+test('return an array of strings all capitolized, sans strings beginning with \'f\'  ', () => {
+	const strArray = ['a', 'aa', 'f', 'ff', 'g', 'gg', 'zZf'];
+	expect(capitalizeAndFilter(strArray)).toEqual(['A', 'AA', 'G', 'GG', 'ZZF']);
 });

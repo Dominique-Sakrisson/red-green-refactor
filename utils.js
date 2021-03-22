@@ -1,5 +1,13 @@
 const getName = ({ name }) => {return name;};
 
-const copyAndPush = (arr, newInt) => ([...arr, newInt]);	
+const copyAndPush = (arr, newInt) => ([...arr, newInt]);
 
-module.exports = { getName, copyAndPush };
+const capitalizeAndFilter = (arr) => {
+  const filtered = arr.filter(itemStr => itemStr.substring(0, 1).toUpperCase() !== 'F');
+  const result = filtered.map(str => {
+    return str.toUpperCase();
+  });
+  return result;
+};
+
+module.exports = { getName, copyAndPush, capitalizeAndFilter };
