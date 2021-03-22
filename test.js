@@ -1,9 +1,16 @@
-const getName = require('./utils.js');
+const { getName, copyAndPush } = require('./utils.js');
 
 test('returns the name property of the object passed as a parameter', () => {
   const spot = { name: 'spot', age: 5, weight: '20 lbs' };
-  expect(getName(spot)).toBe('spot');
+  expect(getName(spot)).toEqual('spot');
 
   const character = { _id: '5cf5679a915ecad153ab68c9', name: 'Aang' };
-  expect(getName(character)).toBe('Aang');
+  expect(getName(character)).toEqual('Aang');
+});
+
+
+test('returns a new array that is a copy of the array passed in with a new item at the end', () => {
+  const numbers = [1, 2, 3];
+  expect(copyAndPush(numbers, 5)).toEqual([1, 2, 3, 5]);
+
 });

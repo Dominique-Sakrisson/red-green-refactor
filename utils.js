@@ -1,3 +1,9 @@
-const getName = ({ name }) => {return name;};   
+const getName = ({ name }) => {return name;};
 
-module.exports = getName;
+const copyAndPush = (arr, newInt) => {
+  const newArray =  [...arr];
+  newArray.push(5);
+  return newArray;
+};	
+
+module.exports = { getName, copyAndPush };
