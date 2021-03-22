@@ -1,3 +1,3 @@
-const getName = (obj) => {return obj.name;};   
+const getName = ({ name }) => {return name;};   
 
 module.exports = getName;
