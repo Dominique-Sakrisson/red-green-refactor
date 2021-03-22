@@ -2,7 +2,7 @@ const getName = ({ name }) => {return name;};
 
 const copyAndPush = (arr, newInt) => {
   const newArray =  [...arr];
-  newArray.push(5);
+  newArray.push(newInt);
   return newArray;
 };	
 
