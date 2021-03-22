@@ -13,4 +13,5 @@ test('returns a new array that is a copy of the array passed in with a new item 
   const numbers = [1, 2, 3];
   expect(copyAndPush(numbers, 5)).toEqual([1, 2, 3, 5]);
 
+  expect(numbers).toEqual([1, 2, 3]);
 });
