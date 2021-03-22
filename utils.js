@@ -13,18 +13,19 @@ const fetchQuotes = async() => {
   try {
     const res = await fetch('https://futuramaapi.herokuapp.com/api/characters/Fry/1');
     const body = await res.json();
-		const result = body.map(item => {item;});
-		return result;
+    const result = body.map(item => { return { name: item.character, text: item.quote, image: item.image };});
+		console.log(result);
+    return result;
     // //used default data in catch block to initially hardcode for test greenPhase
     // return {
-    //   name: 'Fry',
-    //   text: 'The underprivileged get all the breaks.',
+    //   name: item.character,
+    //   text: ,
     //   image: 'https://res.cloudinary.com/dzxqhkyqd/image/upload/v1554904133/fry.png'
     // };
 		
   } 
   catch(error) {
-		//had this in there for default data incase of api being down 
+    //had this in there for default data incase of api being down 
     return {
       name: 'Fry',
       text: 'The underprivileged get all the breaks.',
