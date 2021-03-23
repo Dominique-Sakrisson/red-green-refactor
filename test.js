@@ -1,5 +1,5 @@
 // const { default: fetch } = require('node-fetch');
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 
 const { getName, copyAndPush, capitalizeAndFilter, fetchQuotes } = require('./utils.js');
 
